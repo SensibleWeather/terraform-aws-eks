@@ -453,9 +453,11 @@ resource "aws_eks_node_group" "this" {
   }
 
   lifecycle {
-    create_before_destroy = true
     ignore_changes = [
+      scaling_config[0].max_size,
+      scaling_config[0].min_size,
       scaling_config[0].desired_size,
+      taint,
     ]
   }
 
