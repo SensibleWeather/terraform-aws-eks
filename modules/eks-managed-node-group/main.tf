@@ -203,7 +203,7 @@ resource "aws_launch_template" "this" {
   }
 
   # # Set on node group instead
-  # instance_type = var.launch_template_instance_type
+  instance_type = var.launch_template_instance_type
   kernel_id = var.kernel_id
   key_name  = var.key_name
 
@@ -406,7 +406,7 @@ resource "aws_eks_node_group" "this" {
   capacity_type        = var.capacity_type
   disk_size            = var.use_custom_launch_template ? null : var.disk_size # if using a custom LT, set disk size on custom LT or else it will error here
   force_update_version = var.force_update_version
-  instance_types       = var.instance_types
+  instance_types       = var.launch_template_instance_type != null ? null : var.instance_types
   labels               = var.labels
 
   dynamic "launch_template" {
