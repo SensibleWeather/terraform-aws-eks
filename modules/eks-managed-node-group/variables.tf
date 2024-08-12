@@ -251,6 +251,12 @@ variable "instance_market_options" {
   default     = {}
 }
 
+variable "launch_template_instance_type" {
+  description = "The instance type when set on the launch template. Conflicts with \"instance_types\""
+  type        = string
+  default     = null
+}
+
 variable "maintenance_options" {
   description = "The maintenance options for the instance"
   type        = any
