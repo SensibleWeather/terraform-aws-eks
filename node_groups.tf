@@ -322,6 +322,7 @@ module "eks_managed_node_group" {
   disk_size            = try(each.value.disk_size, var.eks_managed_node_group_defaults.disk_size, null)
   force_update_version = try(each.value.force_update_version, var.eks_managed_node_group_defaults.force_update_version, null)
   instance_types       = try(each.value.instance_types, var.eks_managed_node_group_defaults.instance_types, null)
+  launch_template_instance_type  = try(each.value.launch_template_instance_type, var.eks_managed_node_group_defaults.launch_template_instance_type, null)
   labels               = try(each.value.labels, var.eks_managed_node_group_defaults.labels, null)
 
   remote_access = try(each.value.remote_access, var.eks_managed_node_group_defaults.remote_access, {})
