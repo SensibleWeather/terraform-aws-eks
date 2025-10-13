@@ -296,7 +296,7 @@ module "eks_managed_node_group" {
   disk_size            = each.value.disk_size
   force_update_version = each.value.force_update_version
   instance_types       = each.value.instance_types
-  launch_template_instance_type  = try(each.value.launch_template_instance_type, null)
+  launch_template_instance_type  = each.value.launch_template_instance_type
   labels               = each.value.labels
   node_repair_config   = each.value.node_repair_config
   remote_access        = each.value.remote_access
