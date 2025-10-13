@@ -1280,6 +1280,7 @@ variable "eks_managed_node_groups" {
     create_launch_template                 = optional(bool)
     use_custom_launch_template             = optional(bool)
     launch_template_id                     = optional(string)
+    launch_template_instance_type          = optional(string)
     launch_template_name                   = optional(string) # Will fall back to map key
     launch_template_use_name_prefix        = optional(bool)
     launch_template_version                = optional(string)
