@@ -4,10 +4,10 @@ data "aws_region" "current" {
   region = var.region
 }
 data "aws_partition" "current" {
-  count = var.create && var.partition == "" ? 1 : 0
+  count = 1
 }
 data "aws_caller_identity" "current" {
-  count = var.create && var.account_id == "" ? 1 : 0
+  count = 1
 }
 
 locals {
